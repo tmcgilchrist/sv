@@ -3,20 +3,17 @@
 import Control.Applicative (liftA2)
 import Control.Lens
 import Data.Functor.Alt
-import Data.ByteString (ByteString)
 import Data.Semigroup
 import Data.Text (Text)
 import System.Exit (exitFailure)
 
 import Data.Sv
 
+config :: SvConfig
 config = defaultConfig & (headedness .~ Unheaded)
 
 file :: FilePath
 file = "test/commastring.csv"
-
-type Name = Text
-
 
 data CommaString =
   CommmaString Int Int Double Text Double
